@@ -1,0 +1,26 @@
+{
+  "name": "colin-social-network-api",
+  "version": "1.0.0",
+  "description": "![18-nosql-homework-demo-04](https://user-images.githubusercontent.com/57843842/138008759-aeb6ae1f-6029-40aa-9bbd-64bbc8496375.gif)\r ### GET\r ![18-nosql-homework-demo-01](https://user-images.githubusercontent.com/57843842/138008760-1893485a-7ece-457c-8e19-a3cd3aff2b2f.gif)\r ### POST PUT DELETE\r ![18-nosql-homework-demo-02](https://user-images.githubusercontent.com/57843842/138008763-ba251d8f-2781-4b93-93a1-8a5eedf97020.gif)\r ### POST and DELETE\r ![18-nosql-homework-demo-03](https://user-images.githubusercontent.com/57843842/138008766-38f4c729-b4bb-404d-9844-823efe34abaa.gif)",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^4.1.3",
+    "mongoose": "^6.0.11",
+    "nodemon": "^2.0.14"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ColinNebula/colin-social-network-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ColinNebula/colin-social-network-api/issues"
+  },
+  "homepage": "https://github.com/ColinNebula/colin-social-network-api#readme"
+}
