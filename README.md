@@ -7,6 +7,8 @@ I WANT an API for my social network that uses a NoSQL database
 SO THAT my website can handle large amounts of unstructured data
 
 ## Description
+Social network API is a social network web application where users can share their thoughts, 
+reactions to friends, thoughts, and can also create a friend list. This application is built using node.js, and mongoose DB.
 
 ## Table of Contents
   * [Description](#description)
@@ -14,6 +16,7 @@ SO THAT my website can handle large amounts of unstructured data
   * [Author](#author)
 
 ## Project URL
+
 
 ## Project Github Repository
 https://github.com/ColinNebula/colin-social-network-api/tree/main
@@ -30,7 +33,7 @@ https://github.com/ColinNebula/colin-social-network-api/tree/main
 
 ## Installation
 * Clone or downloads the repository 
-* Npm start in node.js to start
+* Npm start in node.js to start the server
 
 ## Author
 Colin Nebula
