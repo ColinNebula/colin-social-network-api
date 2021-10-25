@@ -1,14 +1,22 @@
+// Import Express
+const express = require('express');
 // Import Mongoose
 const mongoose = require('mongoose');
-const express = require('express');
+
 
 // Port Used
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(require('./routes'));
+
+
 // Listen with mongoose
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/colin-social-network-api', {
-  //useFindAndModify: false,
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/social-network-api', {
+  useFindAndModify: false,
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
