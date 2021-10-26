@@ -1,27 +1,33 @@
 const { Schema, model } = require('mongoose');
-const dateFormat = require('../utils/dateFormat');
+
 
 const UserSchema = new Schema(
     {
-        username: {
+        firstName: {
             type: String,
             required: 'Please provide a user name!',
             trim: true,
-            unique: true
+        
+        },
+        lastName: {
+            type: String,
+            required: 'Please provide a user name!',
+            trim: true,
+        },
+        password: {
+            type: String,
+            trim: true,
+            required: 'Password is Required',
+            validate: [({ length }) => length >= 6, 'Password should be longer.']
         },
         email: {
             type: String,
             unique: true,
             required: true,
             trim: true,
-            match: [/.+@.+\..+/]
+            match: [/.+@.+\..+/, 'Please enter a valid e-mail address']
         },
-        createdAt: {
-            type: Date,
-            default: Date.now,
-            get: (createdAtVal) => dateFormat(createdAtVal)
-        },
-
+        
         thoughts: [
             {
                 type:Schema.Types.ObjectId,
@@ -34,8 +40,13 @@ const UserSchema = new Schema(
                 ref: 'Friends'
             }
         ]    
-        },
-    
+    },
+    {
+    userCreated: {
+        type: Date,
+        default: Date.now
+      }
+    },   
     {
         toJSON: {
             virtuals: true,
@@ -45,13 +56,12 @@ const UserSchema = new Schema(
         id: false
 });
 
-UserSchema.virtual('friendCount').get(function() {
-
-    return this.friends.length;
+UserSchema.virtual('username').get(function() {
+    return this.email.slice(0, this.email.indexOf('@'));
 });
 
-// create the Pizza model using the PizzaSchema
+// create the user model using the userSchema
 const User = model('User', UserSchema);
 
-// export the Pizza model
+// export the user model
 module.exports = User;
