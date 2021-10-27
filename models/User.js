@@ -56,7 +56,8 @@ const UserSchema = new Schema(
         },
         // prevents virtuals from creating duplicate of _id as `id`
         id: false
-});
+    }
+);
 
 UserSchema.virtual('username').get(function() {
     return this.email.slice(0, this.email.indexOf('@'));

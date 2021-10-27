@@ -12,7 +12,13 @@ const thoughtSchema = new Schema({
         type: String,
         required: true
     },
-    reactions: [reactionSchema]
+    
+userCreated: {
+        type: Date,
+        default: Date.now
+        
+    },
+    reaction: [reactionSchema]
 },
 {
     toJSON: {

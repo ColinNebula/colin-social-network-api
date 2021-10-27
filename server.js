@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 
 // Port Used
 const app = express();
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3001;
 
 const { User, Thought } = require('./models');
 
@@ -25,24 +25,25 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/colin-social-ne
 mongoose.set('useCreateIndex', true);
 mongoose.set('debug', true);
 
-app.post('/submit', ({ body }, res) => {
-  const user = new User(body);
+// app.post('/submit', ({ body }, res) => {
+//   const user = new User(body);
 
-  User.create(user)
-    .then(dbUser => {
-      res.json(dbUser);
-    })
-    .catch(err => {
-      res.json(err);
-    });
-});
+//   User.create(user)
+//     .then(dbUser => {
+//       res.json(dbUser);
+//     })
+//     .catch(err => {
+//       res.json(err);
+//     });
+// });
 
-app.get('/users', (req, res) => {
-  User.find({}).then(users => {
-    res.json(users);
-  });
-});
+// app.get('/users', (req, res) => {
+//   User.find({}).then(users => {
+//     res.json(users);
+//   });
+// });
 
+// Create Thought route
 app.post('/submit', ({ body }, res) => {
   const thought = new Thought(body);
 
@@ -53,6 +54,13 @@ app.post('/submit', ({ body }, res) => {
     .catch(err => {
       res.json(err);
     });
+});
+
+// Find Thought route
+app.get('/thoughts', (req, res) => {
+  Thought.find({}).then(thoughts => {
+    res.json(thoughts);
+  });
 });
 
 
