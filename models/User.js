@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+// const dateFormat = require('../utils/dateFormat');
 
 
 const UserSchema = new Schema(
@@ -39,12 +40,13 @@ const UserSchema = new Schema(
                 type: Schema.Types.ObjectId,
                 ref: 'Friends'
             }
-        ]    
-    },
-    {
-    userCreated: {
+        ],    
+    
+    
+        userCreated: {
         type: Date,
         default: Date.now
+        
       }
     },   
     {
@@ -58,7 +60,11 @@ const UserSchema = new Schema(
 
 UserSchema.virtual('username').get(function() {
     return this.email.slice(0, this.email.indexOf('@'));
-});
+  });
+
+UserSchema.virtual('friendCount').get(function() {
+    return this.friends.length
+})
 
 // create the user model using the userSchema
 const User = model('User', UserSchema);

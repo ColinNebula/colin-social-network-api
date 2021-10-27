@@ -6,9 +6,9 @@ const mongoose = require('mongoose');
 
 // Port Used
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 
-const { User } = require('./models');
+const { User, Thought } = require('./models');
 
 // Middleware
 app.use(express.json());
@@ -42,6 +42,19 @@ app.get('/users', (req, res) => {
     res.json(users);
   });
 });
+
+app.post('/submit', ({ body }, res) => {
+  const thought = new Thought(body);
+
+  Thought.create(thought)
+    .then(dbThought => {
+      res.json(dbThought);
+    })
+    .catch(err => {
+      res.json(err);
+    });
+});
+
 
 // Listen for connection
 app.listen(PORT, () => console.log(`🌍 Connected on localhost:${PORT}`));
