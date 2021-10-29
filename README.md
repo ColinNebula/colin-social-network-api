@@ -1,5 +1,4 @@
-# colin-social-network-api
-
+# Colin-social-network-api
 
 ## User Story
 AS A social media startup
@@ -16,10 +15,15 @@ reactions to friends, thoughts, and can also create a friend list. This applicat
   * [Author](#author)
 
 ## Project URL
-
+https://watch.screencastify.com/v/FkcY3TbsRSEGAmWwIHe7
 
 ## Project Github Repository
 https://github.com/ColinNebula/colin-social-network-api/tree/main
+
+## Project Screenshots
+![post-User-Screenshot](https://user-images.githubusercontent.com/57843842/139481684-aa6e4275-5287-44b0-ba66-2fd0c122b648.jpg)
+
+![get-User-Screenshot](https://user-images.githubusercontent.com/57843842/139481710-a6f873a6-98fd-4411-a86e-ac504be76fc5.jpg)
 
 ## Project Markup
 ### GET

@@ -15,12 +15,13 @@ const {
 router
   .route('/')
   .get(getAllThought)
-  .post(addThought);
+  
 
 // Set up GET one, PUT, and DELETE at /api/Thought/:id
 router
   .route('/:id')
   .get(getThoughtById)
+  .post(addThought)
   .put(updateThought)
   .delete(deleteThought);
 

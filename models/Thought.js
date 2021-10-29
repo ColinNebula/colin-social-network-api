@@ -18,7 +18,7 @@ userCreated: {
         default: Date.now
         
     },
-    reaction: [reactionSchema]
+    reactions: [reactionSchema]
 },
 {
     toJSON: {
