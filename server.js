@@ -25,43 +25,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/colin-social-ne
 mongoose.set('useCreateIndex', true);
 mongoose.set('debug', true);
 
-// app.post('/submit', ({ body }, res) => {
-//   const user = new User(body);
-
-//   User.create(user)
-//     .then(dbUser => {
-//       res.json(dbUser);
-//     })
-//     .catch(err => {
-//       res.json(err);
-//     });
-// });
-
-// app.get('/users', (req, res) => {
-//   User.find({}).then(users => {
-//     res.json(users);
-//   });
-// });
-
-// Create Thought route
-app.post('/submit', ({ body }, res) => {
-  const thought = new Thought(body);
-
-  Thought.create(thought)
-    .then(dbThought => {
-      res.json(dbThought);
-    })
-    .catch(err => {
-      res.json(err);
-    });
-});
-
-// Find Thought route
-app.get('/thoughts', (req, res) => {
-  Thought.find({}).then(thoughts => {
-    res.json(thoughts);
-  });
-});
+app.use(require('./routes'));
 
 
 // Listen for connection
